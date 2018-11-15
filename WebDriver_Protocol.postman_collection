@@ -1,0 +1,75 @@
+{
+	"variables": [],
+	"info": {
+		"name": "WebDriver Protocol",
+		"_postman_id": "94efe8e7-01f2-8ab9-d2b6-47dd497fc0bc",
+		"description": "Postman collection of webdriver protocol services call for chromedriver ",
+		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "New Session",
+			"request": {
+				"url": "http://localhost:{{DRIVER_PORT}}/session",
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{ \"desiredCapabilities\": { \"browserName\": \"{{BROWSER}}\" } }"
+				},
+				"description": "Post call to create New session"
+			},
+			"response": []
+		},
+		{
+			"name": "Get Status",
+			"request": {
+				"url": "http://localhost:{{DRIVER_PORT}}/status",
+				"method": "GET",
+				"header": [],
+				"body": {},
+				"description": "Get status of the browser/driver"
+			},
+			"response": []
+		},
+		{
+			"name": "Get Current URL",
+			"request": {
+				"url": "http://localhost:{{DRIVER_PORT}}/session/{{SESSION}}/url",
+				"method": "GET",
+				"header": [],
+				"body": {},
+				"description": "get Current URL on the browser"
+			},
+			"response": []
+		},
+		{
+			"name": "Navigate to URL",
+			"request": {
+				"url": "http://localhost:{{DRIVER_PORT}}/session/{{SESSION}}/url",
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\"url\": \"https://google.com\"}"
+				},
+				"description": "get Current URL on the browser"
+			},
+			"response": []
+		},
+		{
+			"name": "Find Element",
+			"request": {
+				"url": "http://localhost:{{DRIVER_PORT}}/session/{{SESSION}}/element",
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\"url\": \"https://google.com\"}"
+				},
+				"description": "get Current URL on the browser"
+			},
+			"response": []
+		}
+	]
+}
